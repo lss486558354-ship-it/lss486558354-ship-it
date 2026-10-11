@@ -32,7 +32,9 @@ BambuLab 的切片软件没有 API，那就把「人在 GUI 上点鼠标」这�
 ### 🖨️ [printer-controller](https://github.com/lss486558354-ship-it/printer-controller)
 **驱动没有 API 的桌面软件的「数字员工」** — Python · 8.5k 行
 
-拓竹 Bambu Studio 不提供 CLI、HTTP API 或插件机制，导致 3D 打印农场无法批量下发任务。本项目走第三条路：不改固件、不逆向协议，直接自动化「人在 GUI 上操作」这个行为本身。
+拓竹 Bambu Studio 不提供 CLI、HTTP API 或插件机制，自助打印终端因此无法无人值守下发任务。本项目走第三条路：不改固件、不逆向协议，直接自动化「人在 GUI 上操作」这个行为本身。
+
+> 📌 **受企业委托开发的商业化原型**，本仓库为其中的**早期验证版本**（含下方视频素材）；交付版含商业定制，未公开。
 
 📹 **[现场实录演示视频](https://github.com/lss486558354-ship-it/printer-controller/releases/tag/v2.0.0)** — 未剪辑的真机运行记录（含 GIF 预览）
 
