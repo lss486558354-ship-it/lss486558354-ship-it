@@ -15,6 +15,21 @@ BambuLab 的切片软件没有 API，那就把「人在 GUI 上点鼠标」这�
 
 ---
 
+> **🎯 求职意向：2027届应届生，正在寻找 AI Agent 开发 / 后端开发 / 嵌入式 FAE 岗位。随时可离校全职实习。**
+
+---
+
+## 核心项目速览
+
+| 项目 | 定位 |
+|---|---|
+| [Agent-LongRun-Framework](https://github.com/lss486558354-ship-it/Agent-LongRun-Framework) | 持久化记忆与状态机的深度耦合框架 |
+| [agent-memory-router](https://github.com/lss486558354-ship-it/agent-memory-router) | 基于 MCP 的白盒 Agent 记忆路由系统 |
+| [engineering-workflow](https://github.com/lss486558354-ship-it/engineering-workflow) | AI 编程 Agent 的授权与执行边界协议 |
+| [diagnosis-agent](https://github.com/lss486558354-ship-it/diagnosis-agent) | 完整落地 RAG 与 MCP 检索评估的智能体 |
+
+---
+
 ## 项目
 
 ### 🔧 [engineering-workflow](https://github.com/lss486558354-ship-it/engineering-workflow)
@@ -89,11 +104,9 @@ BambuLab 的切片软件没有 API，那就把「人在 GUI 上点鼠标」这�
 
 ---
 
-## 我正在补的短板
+## 下一步计划
 
-诚实地说，我的 AI 应用工程经验集中在 **Agent 编排与权限设计**，下面这些是 JD 里常见但我**还没有真实项目产出**的：RAG 检索链路、MCP 服务开发、LangGraph / Dify / LlamaIndex 的实际落地。
-
-我在补，方式是先动手做一个小而完整的东西，而不是先刷教程。如果你对某个方向有具体建议，欢迎邮件告诉我。
+**将白盒记忆路由扩展至超大规模业务落地，并继续深化 RAG 检索与 MCP 协议在企业级场景的应用。**
 
 ---
 
