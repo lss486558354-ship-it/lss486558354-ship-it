@@ -19,14 +19,56 @@ BambuLab 的切片软件没有 API，那就把「人在 GUI 上点鼠标」这�
 
 ---
 
-## 核心项目速览
+## 项目地图
 
-| 项目 | 定位 |
-|---|---|
-| [Agent-LongRun-Framework](https://github.com/lss486558354-ship-it/Agent-LongRun-Framework) | 持久化记忆与状态机的深度耦合框架 |
-| [agent-memory-router](https://github.com/lss486558354-ship-it/agent-memory-router) | 基于 MCP 的白盒 Agent 记忆路由系统 |
-| [engineering-workflow](https://github.com/lss486558354-ship-it/engineering-workflow) | AI 编程 Agent 的授权与执行边界协议 |
-| [diagnosis-agent](https://github.com/lss486558354-ship-it/diagnosis-agent) | 完整落地 RAG 与 MCP 检索评估的智能体 |
+> 核心项目不是并列的六个仓库，而是三条能力线。
+
+**快速跳转：** [项目详情](#项目) · [技术栈](#技术栈) · [获奖](#获奖) · [下一步计划](#下一步计划) · [联系](#联系)
+
+### 三条能力线
+
+| 能力线 | 项目 | 解决的问题 |
+|---|---|---|
+| **Agent 基础设施** | [agent-memory-router](https://github.com/lss486558354-ship-it/agent-memory-router) · [engineering-workflow](https://github.com/lss486558354-ship-it/engineering-workflow) · [Agent-LongRun-Framework](https://github.com/lss486558354-ship-it/Agent-LongRun-Framework) | Agent 记不住、乱写、干不长 |
+| **Agent 应用** | [diagnosis-agent](https://github.com/lss486558354-ship-it/diagnosis-agent) | 工业文档检索不可评估、不可溯源 |
+| **真实设备与现场** | [scallion-washer-packer](https://github.com/lss486558354-ship-it/scallion-washer-packer) · [printer-controller](https://github.com/lss486558354-ship-it/printer-controller) | 目标系统没有接口，但事情必须做成 |
+
+### 项目关系
+
+```mermaid
+flowchart TB
+    subgraph INFRA["Agent 基础设施"]
+        W["engineering-workflow<br/>授权与执行边界"]
+        R["agent-memory-router<br/>白盒记忆路由"]
+        F["Agent-LongRun-Framework<br/>状态机 × 记忆耦合"]
+        W -->|"状态机 · 断点协议"| F
+        R -->|"MCP · SQLite 记忆"| F
+    end
+
+    subgraph APP["Agent 应用"]
+        D["diagnosis-agent<br/>RAG + MCP 检索评估"]
+    end
+
+    subgraph DEVICE["真实设备与现场"]
+        S["scallion-washer-packer<br/>STM32 + FreeRTOS 电控"]
+        P["printer-controller<br/>无 API GUI 自动化"]
+        S -.->|"控制 · 调试方法"| P
+    end
+
+    F -.->|"长任务方法论"| D
+    R -.->|"同用 MCP 协议"| D
+    S -.->|"工业文档 · 故障案例"| D
+```
+
+**怎么读这张图：**
+
+- `agent-memory-router` 是**记忆底座**：MCP + SQLite + `raw_data/`，解决「记不住」。
+- `engineering-workflow` 是**边界协议**：读写门禁 × 执行策略，解决「乱写」。
+- `Agent-LongRun-Framework` 是**耦合层**：把前两者的状态机与记忆接起来，解决「干不长」。
+- `diagnosis-agent` 是**应用层**：用 MCP + RAG 把工业文档变成可检索、可评估的知识库。
+- `scallion-washer-packer` 和 `printer-controller` 是**现场层**：一个做嵌入式电控，一个做无 API GUI 自动化；现场文档与故障案例又反哺 `diagnosis-agent`。
+
+> **一句话：底层能碰硬件，上层能设计 Agent 的记忆、权限与恢复机制，中间能把它们落到真实业务里。**
 
 ---
 
