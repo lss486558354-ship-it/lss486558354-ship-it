@@ -1,12 +1,10 @@
 <div align="center">
 
-# 刘水生 · Liu Shuisheng
+# 给 AI Agent 装上状态机与记忆
 
-**给 AI Agent 装上状态机与记忆。**
+**刘水生 / Liu Shuisheng** · 2027 届应届生
 
-Agent 基建 · 长任务运行时契约 · 重度 AI Native 开发者
-
-**求职方向**：Agent 基建 / AI 应用工程 / AI Native 全栈 · 2027 届应届生
+**求职方向**：Agent 基建 / AI 应用工程 / AI Native 全栈
 
 [**简历与项目演示 →**](https://78456.tech/cv) · [邮箱](mailto:lss486558354@gmail.com) · [GitHub](https://github.com/lss486558354-ship-it)
 
